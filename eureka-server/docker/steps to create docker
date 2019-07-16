@@ -1,0 +1,22 @@
+STEPS TO CREATE DOCKER:
+1) Create a folder name "docker"  eg:/home/USERNAME/docker
+2) Download eureka-server , Dockerfile , maven.sh , build.sh ,config-files from github 
+
+3) copy eureka-server , Dockerfile , maven.sh , build.sh & jdk8 at  docker folder (/home/USERNAME/docker/) & config-files at (/home/USERNAME/)
+4) TO BUILD DOCKER:
+   4.1)cd /home/USERNAME/docker/ && sh build.sh
+
+5) To create  container command:
+
+   5.1)docker run -v /home/USERNAME/config-files:/home/app/config-files  -p 8081:8081  -p 8760:8760 -d deepali27/eureka:jdk8
+
+ 
+
+
+
+
+
+
+   
+
+

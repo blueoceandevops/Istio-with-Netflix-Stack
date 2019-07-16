@@ -1,0 +1,8 @@
+spring:
+  profiles:
+    active: dev_env
+  application:
+    name: productservice
+  cloud:
+    config:
+      uri: http://configserverservice.shoppingportal.svc.cluster.local/configserver/

@@ -1,0 +1,63 @@
+# ------------------------------------------------------------------------------------------------------------------------------------------
+# Application is running on 3 different environment throughout its deployment lifecycle
+# dev_env for developers workspace 
+# qa_env for first testing cycle on cloud 
+# prod_env operational deployment for the intended uses by end users
+# You can seek your environment and set the active environment property out of dev_env, qa_env or prod_env in config client's bootstrap.yml
+# ------------------------------------------------------------------------------------------------------------------------------------------
+
+# Application properties for developers environment 
+
+server:
+  port: 8762   
+
+spring:
+  profiles: dev_env
+  application:
+    name: eurekaserver  
+  
+eureka:
+  instance:
+    hostname: localhost
+  client:  
+    registerWithEureka: false
+    fetchRegistry: false
+
+---
+
+# Application properties for QA environment 
+
+server:
+  port: 5020   
+
+spring:
+  profiles: qa_env
+  application:
+    name: eurekaserver  
+  
+eureka:
+  instance:
+    hostname: servicediscovery.desire3d.com
+  client:  
+    registerWithEureka: false
+    fetchRegistry: false
+    
+---
+
+# Application properties for Production environment 
+
+server:
+  port: 5020   
+
+spring:
+  profiles: prod_env
+  application:
+    name: eurekaserver  
+  
+eureka:
+  instance:
+    hostname: servicediscovery.desire3d.com
+  client:  
+    registerWithEureka: false
+    fetchRegistry: false
+    
